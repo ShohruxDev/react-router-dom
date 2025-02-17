@@ -1,0 +1,19 @@
+.detail-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .detail-image {
+    max-width: 50%;
+    height: auto;
+  }
+  
+  .detail-info {
+    max-width: 45%;
+  }
+  
+  footer {
+    margin-top: 30px;
+  }
+  

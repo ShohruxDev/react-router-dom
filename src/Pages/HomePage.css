@@ -1,0 +1,37 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+.search-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: auto;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+  

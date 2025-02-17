@@ -1,0 +1,53 @@
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import api from '../api';
+import './DetailPage.css';
+
+
+const DetailPage = () => {
+  const { productId } = useParams();
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    api.get(`/${productId}`)
+      .then(response => {
+        setProduct(response.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        setError('Mahsulotni olishda xatolik yuz berdi...');
+        setLoading(false);
+      });
+  }, [productId]);
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>{error}</div>;
+  }
+  return (
+    <div>
+      <div className="detail-container" style={{
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        height:'61vh'
+      }}>
+        <img src={product.images[0]} alt={product.name} className="detail-image" style={{
+          width:'400px'
+        }}/>
+        <div className="detail-info">
+          <h2>{product.name}</h2>
+          <p>{product.description}</p>
+          <p><strong>Price: </strong>${product.price}</p>
+          <p><strong>Category: </strong>{product.category}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default DetailPage;
+

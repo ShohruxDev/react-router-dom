@@ -1,0 +1,41 @@
+.cards {
+  display: grid;
+  list-style: none;
+  font-family: sans-serif;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+.card{
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+.card-content{
+  padding: 10px;
+  border-top: 1px solid gray;
+}
+
+.carousel-root{
+  margin: 0 auto !important;
+  width: 400px !important;
+}
+
+.control-arrow{
+  background-color: rgb(201, 201, 202) !important;
+  margin-top: 30% !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.carousel-status{
+  font-size: 20px !important;
+  color: black !important;
+}
+
+.slider-wrapper{
+  width: 200px !important;
+  height: 300px !important;
+}
+
+.control-dots{
+  display: none !important;
+}
