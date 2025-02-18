@@ -39,10 +39,18 @@ const DetailPage = () => {
           width:'400px'
         }}/>
         <div className="detail-info">
-          <h2>{product.name}</h2>
+          <h2 style={{
+            color:'black',
+            fontWeight:'700'
+          }}>{product.title}</h2>     
           <p>{product.description}</p>
           <p><strong>Price: </strong>${product.price}</p>
           <p><strong>Category: </strong>{product.category}</p>
+          <div className="flexxc">
+          <button className='kor'>Korzinka</button>
+          <button className='bir
+          '>Bir martalik tolov</button>
+          </div>
         </div>
       </div>
     </div>

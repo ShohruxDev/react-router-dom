@@ -1,17 +1,20 @@
+@import "tailwindcss";
 .cards {
   display: grid;
   list-style: none;
   font-family: sans-serif;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 25px;
 }
+body{
+  overflow-x: hidden;
+}
 .card{
-  border: 1px solid gray;
   border-radius: 8px;
+  padding: 30px;
 }
 .card-content{
-  padding: 10px;
-  border-top: 1px solid gray;
+  padding: 50px;
 }
 
 .carousel-root{
@@ -20,14 +23,18 @@
 }
 
 .control-arrow{
-  background-color: rgb(201, 201, 202) !important;
+  background-color: rgb(90, 238, 154) !important;
   margin-top: 30% !important;
   width: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 40px !important;
 }
 
 .carousel-status{
   font-size: 20px !important;
+  margin-top: 12px;
   color: black !important;
 }
 

@@ -1,16 +1,117 @@
   
 .header {
-    background-color: #333;
-    padding: 20px;
-    color: white;
-    text-align: center;
-  }
-  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+header button{
+  border-radius: 8px;
+  cursor: pointer;
+}
+header button:hover{
+  background-color: rgb(41, 41, 214);
+}
+.inputref{
+  position: relative;
+}
+.category-select {
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.inputref {
+  display: flex;
+  align-items: center;
+}
+
+.btn{
+  position: absolute;
+  width: 80px;
+  border-top-right-radius: 8px;
+  margin-left: 412px;
+  height: 43px;
+  border-bottom-right-radius: 8px;
+  background-color: blue;
+}
+.tnb{
+  padding: 10px 20px;
+  background-color: inherit;
+  color: blue;
+}
+.tnb:hover{
+  background-color: inherit;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; 
+}
+
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.close-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color:rgb(87, 87, 188);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close-btn:hover {
+  background-color: #e43e3e;
+}
+
+.btnn{
+  padding: 10px 50px;
+  background-color: blue;
+  border-radius: 8px;
+}
+.flex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flex:hover{
+  color: blue;
+  cursor: pointer;
+}
+.flex img{
+  width: 20px;
+  height: 20px;
+}
+ .inputt{
+  padding: 10px 100px;
+  border: none;
+  border-radius: 8px;
+  border: 2px solid blue;
+ } 
   .nav-list {
     list-style: none;
     padding: 0;
   }
-  
+
   .nav-list li {
     display: inline;
     margin: 0 15px;

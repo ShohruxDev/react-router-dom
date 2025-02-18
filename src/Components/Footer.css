@@ -1,12 +1,28 @@
 
 .footer {
-    background-color: #333;
     color: white;
     text-align: center;
-    padding: 15px 0;
+    display: flex;
+    width: 100vw;
+    background-color: blue;
+    height: 20vh;
+    align-items: center;
+    justify-content: center;
     margin-top: 40px;
   }
-  
+  .foot{
+    width: 90%;
+    height: 86%;
+    display: flex; align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    color: black;
+    background-color:white;
+  }
+  .foot p{
+    font-size: 20px;
+    font-weight: 500;
+  }
   .footer p {
     font-size: 14px;
   }

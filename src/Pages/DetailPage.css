@@ -16,4 +16,38 @@
   footer {
     margin-top: 30px;
   }
-  
+  .starr{
+    display: flex;
+    width: 10%;
+    align-items: center;
+    gap:0px;
+  }
+  .kor{
+    padding: 10px 50px;
+    background-color: aquamarine;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
+    margin-top: 15px;
+  }
+  .kor:hover{
+    background-color: rgb(73, 216, 169);
+  }
+  .flexxc{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .bir{
+    padding: 10px 50px;
+    border-radius: 8px;
+    border: 2px solid blue;
+    cursor: pointer;
+    color: blue;
+    font-weight: 500;
+    margin-top: 15px;
+  }
+  .bir:hover{
+    background-color: aliceblue;
+  }

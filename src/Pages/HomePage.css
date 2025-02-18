@@ -1,20 +1,55 @@
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
+  padding: 10px 20px;
 }
 
 .product-card {
-  border: 1px solid #ddd;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
   padding: 20px;
   text-align: center;
 }
-
+.product-card:hover{
+  width: 105%;
+  transition: all 0.3s;
+  height: 110%;
+}
 .search-container {
   text-align: center;
   margin-bottom: 20px;
 }
-
+.kupit{
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.star{
+  display: flex;
+  width: 10%;
+  align-items: center;
+  gap:0px;
+}
+.btn-0{
+  padding: 10px 40px;
+  border-radius: 8px;
+  background-color: rgb(51, 51, 222);
+  cursor: pointer;
+}
+.btn-0:hover{
+  background-color: blue;
+}
+.btn-1:hover{
+  background-color: rgb(53, 232, 172);
+}
+.btn-1{
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: aquamarine;
+  cursor: pointer;
+}
 input {
   padding: 10px;
   width: 80%;
