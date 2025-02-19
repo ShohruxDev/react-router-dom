@@ -21,7 +21,9 @@ body{
   margin: 0 auto !important;
   width: 400px !important;
 }
-
+.carousel-slider{
+  margin-top: 20vh !important;
+}
 .control-arrow{
   background-color: rgb(90, 238, 154) !important;
   margin-top: 30% !important;

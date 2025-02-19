@@ -12,7 +12,6 @@ const Header = ({ setProducts }) => {
     if (searchTerm === '') return; 
     const fetchProducts = async () => {
       try {
-     
         const response = await api.get(`/search?q=${searchTerm}&category=${selectedCategory}`);
         console.log('API javobi:', response.data);
         if (response.data.products) {
@@ -66,20 +65,17 @@ const Header = ({ setProducts }) => {
       </div>
       <div className="flex">
         <img src={imgg} alt="" />
-        <p style={{
-          color:'blue'
-        }}>MOdal</p>
-        {/* <button onClick={() => setIsModalOpen((prev) => !prev)} className="tnb">
-          Modalni ochish
-        </button> */}
+        <button onClick={() => setIsModalOpen((prev) => !prev)} className="tnb">
+          Modal
+        </button>
 
         {isModalOpen && (
           <div className="modal">
             <div className="modal-content">
               <p>Modal kontenti</p>
-              {/* <button onClick={() => setIsModalOpen(false)} className="close-btn">
+              <button onClick={() => setIsModalOpen(false)} className="close-btn">
                 <p>Yopish</p>
-              </button> */}
+              </button>
             </div>
           </div>
         )}
