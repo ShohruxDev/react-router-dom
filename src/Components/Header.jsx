@@ -3,11 +3,13 @@ import img from '../assets/asaxiy-logo.svg';
 import imgg from '../assets/image.png';
 import './Header.css';
 import api from '../api';
-
-const Header = ({ setProducts }) => {
+import { useStateValue } from '../context/newsContext';
+import { NavLink } from 'react-router-dom';
+const Headerd = ({ setProducts }) => {
   const [searchTerm, setSearchTerm] = useState(''); 
   const [isModalOpen, setIsModalOpen] = useState(false); 
   const [selectedCategory, setSelectedCategory] = useState('all'); 
+  const {wishlist} = useStateValue()
   useEffect(() => {
     if (searchTerm === '') return; 
     const fetchProducts = async () => {
@@ -68,7 +70,6 @@ const Header = ({ setProducts }) => {
         <button onClick={() => setIsModalOpen((prev) => !prev)} className="tnb">
           Modal
         </button>
-
         {isModalOpen && (
           <div className="modal">
             <div className="modal-content">
@@ -80,11 +81,12 @@ const Header = ({ setProducts }) => {
           </div>
         )}
       </div>
+      {/* <NavLink to="/news">News {wishlist.length}</NavLink> */}
     </header>
   );
 };
 
-export default Header;
+export default Headerd;
 
 
 

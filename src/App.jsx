@@ -5,6 +5,8 @@ import ProductDetail from "./Pages/ProductDetail";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import api from "./api";
+import NewsProvider, { useStateValue } from "./context/newsContext";
+import News from "./Pages/NewsPage";
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -14,15 +16,20 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
-      <Header setProducts = {setProducts} />
-      <Routes>
-        <Route path="/" element={<HomePage products={products} />} />
-        <Route path="/product/:productId" element={<ProductDetail />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <NewsProvider>
+      <Router>
+        <Header setProducts={setProducts} />
+        <Routes>
+          <Route path="/" element={<HomePage products={products} />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/product/:productId" element={<ProductDetail />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </NewsProvider>
   );
 };
 
 export default App;
+
+
