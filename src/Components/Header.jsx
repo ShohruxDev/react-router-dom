@@ -81,7 +81,7 @@ const Headerd = ({ setProducts }) => {
           </div>
         )}
       </div>
-      {/* <NavLink to="/news">News {wishlist.length}</NavLink> */}
+      <NavLink to="/news">News {wishlist.length}</NavLink>
     </header>
   );
 };
