@@ -1,39 +1,34 @@
-import { FaStar } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import { useStateValue } from "../context/newsContext";
-import "./HomePage.css";
-import CustomCarousel from "../Components/Carousel";
-import { FaBeer } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import imk from "../assets/cart-single.svg";
-import iml from "../assets/heart.svg"
-const HomePage = ({ products, cart, setCart }) => {
-  const [issModalOpen, setIssModalOpen] = useState(false);
+import React, { useEffect } from "react";
+import NewsProvider, { useStateValue } from "../context/cartContext";
+import { FaStar } from "react-icons/fa";
+import Header from "../Components/Header";
+const Newss = () => {
+  const { wishlistt, setwishlistt } = useStateValue();
   const navigate = useNavigate();
-  const { setwishlist, wishlist } = useStateValue();
-  const { setwishlistt, wishlistt } = useStateValue();
-  const handlwishlistt = (product) => {
-    const issomewishlistt = wishlistt.some((item) => item.id === product.id);
-    if (issomewishlistt) {
-      setwishlistt(wishlistt.filter((item) => item.id !== product.id));
+
+  const handleWishlistt = (product) => {
+    const isProductInWishlistt = wishlistt.some(
+      (item) => item.id === product.id
+    );
+
+    if (isProductInWishlistt) {
+      const updatedWishlistt = wishlistt.filter(
+        (item) => item.id !== product.id
+      );
+      setwishlistt(updatedWishlistt);
     } else {
-      setwishlistt([...wishlistt, product]);
-    }
-  };
-  const handlwishlist = (product) => {
-    const issomewishlist = wishlist.some((item) => item.id === product.id);
-    if (issomewishlist) {
-      setwishlist(wishlist.filter((item) => item.id !== product.id));
-    } else {
-      setwishlist([...wishlist, product]);
+      const updatedWishlistt = [...wishlistt, product];
+      setwishlistt(updatedWishlistt);
     }
   };
 
   return (
-    <div>
-      <CustomCarousel products={products} />
+    <>
+      <Header />
+      <p>{wishlistt.length}</p>
       <div className="product-grid">
-        {products.map((product) => (
+        {wishlistt.map((product) => (
           <div
             key={product.id}
             className="product-card"
@@ -50,13 +45,6 @@ const HomePage = ({ products, cart, setCart }) => {
               >
                 Супер цена
               </button>
-              <img style={{
-                cursor:'pointer'
-              }} onClick={(e) => {
-                e.stopPropagation();
-                handlwishlist(product)
-              }} src={iml} alt="" />
-            
             </div>
             <img
               style={{
@@ -70,12 +58,6 @@ const HomePage = ({ products, cart, setCart }) => {
             <h3>{product.name}</h3>
             <div>
               <div className="star">
-                <p>
-                  Rating: {product.rating} <FaStar size={15} color="orange" />
-                </p>
-                <p>
-                  Rating: {product.rating} <FaStar size={15} color="orange" />
-                </p>
                 <p>
                   Rating: {product.rating} <FaStar size={15} color="orange" />
                 </p>
@@ -94,7 +76,6 @@ const HomePage = ({ products, cart, setCart }) => {
               <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  setCart([...cart, product]);
                 }}
                 className="btn-1"
               >
@@ -103,6 +84,7 @@ const HomePage = ({ products, cart, setCart }) => {
               <button
                 onClick={(e) => {
                   e.stopPropagation();
+                  handleWishlistt(product);
                   setIssModalOpen((prev) => !prev);
                 }}
                 className="moda"
@@ -132,8 +114,8 @@ const HomePage = ({ products, cart, setCart }) => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
-export default HomePage;
+export default Newss;

@@ -5,14 +5,14 @@ import { FaStar } from "react-icons/fa";
 import Header from "../Components/Header";
 const News = () => {
   const { wishlist, setwishlist } = useStateValue();
-  const navigate = useNavigate();
-  useEffect(() => {
-    const storedWishlist = localStorage.getItem("wishlist");
-    if (storedWishlist) {
-      setwishlist(JSON.parse(storedWishlist)); 
-    }
-    localStorage.setItem('wishlist',JSON.stringify(wishlist))
-  }, [wishlist]);
+  const navigate = useNavigate(); 
+  // useEffect(() => {
+  //   const storedWishlist = localStorage.getItem("wishlist");
+  //   if (storedWishlist) {
+  //     setwishlist(JSON.parse(storedWishlist)); 
+  //   }
+  //   localStorage.setItem('wishlist',JSON.stringify(wishlist))
+  // }, [wishlist]);
   const handleWishlist = (product) => {
     const isProductInWishlist = wishlist.some((item) => item.id === product.id);
 
